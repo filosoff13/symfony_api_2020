@@ -1,0 +1,25 @@
+<table>
+    <thead>
+    <tr>
+        <th colspan="2">The frequency table</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>word</td>
+        <td>count</td>
+    </tr>
+    {% for search in searches %}
+        <tr>
+            {% if search.searches > 50 %}
+                <td bgcolor="blue">"{{ search.word }}"</td>
+                <td bgcolor="blue">"{{ search.searches }}"</td>
+            {% else %}
+                <td>"{{ search.word }}"</td>
+                <td style="animation: both">"{{ search.searches }}"</td>
+
+                </tr>
+            {% endif %}
+    {% endfor %}
+    </tbody>
+</table>

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Define and Pronounce{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col">
+            <form class="searchform cf" action="{{ path('search') }}" method="get">
+                <input type="text" name="word">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="tags_cloud">
+                {{ render(path('tags')) }}
+            </div>
+        </div>
+    </div>
+{% endblock body %}

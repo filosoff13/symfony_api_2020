@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ word }}{% endblock %}
+
+{% block body %}
+    <div class="container-result" xmlns="http://www.w3.org/1999/html">
+
+        <h2 class="oxford-title">Oxford Dictionary defines '{{ word }}' as:</h2>
+        <div class="definition">
+        {% for definition in result.definition %}
+            {{ definition }}
+        {% endfor %}
+        </div>
+        <div class="pronunciation">
+        <audio controls>
+            <source src="{{ result.pronunciation }}" type="audio/mp3">
+        </audio>
+        </div>
+    </div>
+
+
+
+{% endblock body %}
